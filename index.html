@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDUGRAM UGANDA</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f6f4f1;
+      color: #333;
+    }
+
+    /* HEADER */
+    header {
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 35px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #7a6c5d;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .login-btn {
+      background: #eae7dc;
+    }
+
+    .signup-btn {
+      background: #7a6c5d;
+      color: white;
+    }
+
+    .signup-btn:hover {
+      background: #5f5448;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .search-bar input {
+      padding: 12px;
+      width: 300px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 60px 60px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #7a6c5d;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    /* UPLOAD FORM */
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form input,
+    form select {
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      width: 320px;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: white;
+      margin-top: 40px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Flag_of_Uganda.svg" />
+      <h3>EDUGRAM UGANDA</h3>
+    </div>
+
+    <nav>
+      <a href="#subjects">Subjects</a>
+      <a href="#tertiary">Tertiary</a>
+      <a href="#upload">Upload</a>
+      <button class="btn login-btn" onclick="openLogin()">Login</button>
+      <button class="btn signup-btn" onclick="openSignup()">Sign Up</button>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Uganda’s Digital Learning Hub</h1>
+    <p>Access, share and discover academic resources across Uganda.</p>
+    <div class="search-bar">
+      <input type="text" placeholder="Search subjects or courses..." />
+    </div>
+    <br /><br />
+    <img src="https://share.google/5g9yL5Zfs6xOTc3EE" alt="Kings College Budo Crest" />
+  </div>
+
+  <section id="subjects">
+    <h2>Secondary School Subjects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Mathematics</h3>
+      </div>
+
+      <div class="card">
+        <h3>Biology</h3>
+      </div>
+
+      <div class="card">
+        <h3>History</h3>
+        </div>
+     
+     <div class="card">
+       <h3>Biology</h3>
+      </div>
+     
+      <div class="card">
+       <h3>Physics</h3>
+      </div>
+     
+      <div class="card">
+       <h3>Religious Education</h3>
+      </div>
+     
+      <div class="card">
+       <h3>Technical Drawing</h3>
+      </div>
+     
+      <div class="card">
+       <h3>English</h3>
+      </div>
+     
+      <div class="card">
+       <h3>Art</h3>
+      </div>
+     
+      <div class="card">
+       <h3>Chemistry</h3>
+      </div>
+     
+      <div class="card">
+       <h3>Foreign Languages</h3>
+      </div>
+     
+      <div class="card">
+       <h3>Local Languages</h3>
+      </div>
+     
+      <div class="card">
+       <h3>ICT</h3>
+      </div>
+     
+      <div class="card">
+       <h3>Physical Education</h3>
+      </div>
+     
+      <div class="card">
+       <h3>Geography</h3>
+      </div>
+      <div class="card">
+       <h3>Performing Arts</h3>
+      </div>
+       
+    </div>
+  </section>
+
+  <section id="tertiary">
+    <h2>Tertiary Courses</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Cosmetology</h3>
+       </div>
+
+      <div class="card">
+        <h3>Tailoring</h3>
+      </div>
+
+      <div class="card">
+        <h3>Coding</h3>
+      </div>
+     
+      <div class="card">
+       <h3>Farming</h3>
+      </div>
+     
+      <div class="card">
+       <h3>Media</h3>
+      </div>
+     
+      <div class="card">
+       <h3>Hospitality</h3>
+      </div>
+     
+      <div class="card">
+       <h3>Business Management</h3>
+      </div>
+     
+      <div class="card">
+       <h3>Communication</h3>
+      </div>
+ 
+    </div>
+  </section>
+
+  <section id="upload">
+    <h2>Upload Study Materials</h2>
+
+    <div class="grid">
+      <div class="card">
+        <form id="uploadForm">
+          <input type="text" placeholder="Full Name" required />
+          <input type="email" placeholder="Email" required />
+
+          <select required>
+            <option value="">Select Education Level</option>
+            <option>Secondary School</option>
+            <option>University</option>
+            <option>Primary School</option>
+          </select>
+
+          <select required>
+            <option value="">Select Subject / Course</option>
+            <option>Mathematics</option>
+            <option>Biology</option>
+            <option>History</option>
+            <option>Chemistry</option>
+            <option>Physics</option>
+            <option>Geography</option>
+            <option>Religious Education</option>
+            <option>English</option>
+            <option>Other</option>
+
+          </select>
+
+          <input type="file" accept=".pdf" />
+          <input type="url" placeholder="Paste YouTube Video Link" />
+
+          <button type="submit" class="btn signup-btn">Submit Upload</button>
+        </form>
+
+        <p id="successMessage" style="color:green; display:none; margin-top:15px;">
+          ✔ Upload submitted successfully! (Demo version)
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGIN MODAL -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3>Login</h3>
+      <input type="email" placeholder="Email" />
+      <input type="password" placeholder="Password" />
+      <button class="btn signup-btn">Login</button>
+      <p onclick="switchToSignup()" style="cursor:pointer; font-size:14px;">
+        Don't have an account? Sign Up
+      </p>
+    </div>
+  </div>
+
+  <!-- SIGNUP MODAL -->
+  <div class="modal" id="signupModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3>Create Account</h3>
+      <input type="text" placeholder="Full Name" />
+      <input type="email" placeholder="Email" />
+      <input type="password" placeholder="Password" />
+      <button class="btn signup-btn">Sign Up</button>
+      <p onclick="switchToLogin()" style="cursor:pointer; font-size:14px;">
+        Already have an account? Login
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    EDUGRAM UGANDA © 2026 <br />
+    Designed by PATRICIA SIIMA ANGOMI
+  </footer>
+
+  <script>
+    function openLogin() {
+      document.getElementById("loginModal").style.display = "flex";
+    }
+
+    function openSignup() {
+      document.getElementById("signupModal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("loginModal").style.display = "none";
+      document.getElementById("signupModal").style.display = "none";
+    }
+
+    function switchToSignup() {
+      closeModal();
+      openSignup();
+    }
+
+    function switchToLogin() {
+      closeModal();
+      openLogin();
+    }
+    document.getElementById("uploadForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("successMessage").style.display = "block";
+      this.reset();
+    });
+  </script>
+</body>
+
+</html>
